@@ -1,0 +1,18 @@
+@import url("/main/main.css");
+@import url("/main/fg-buttons.css");
+
+/* Variables globales del tema */
+:root {
+    --primary-color: 163,104,230;
+    --overlay-color: 255, 255, 255;
+    --overlay-opacity: 0.1;
+    --blur: 2em;
+    --border-thickness: 1px;
+    --icon-color: 173,127,218;
+    --dropdown-bg-opacity: 0.2;
+
+    /* Background */
+    --bg-img: url("/main/default-bg.jpg");
+    --bg-blur: 8px;
+    --bg-brightness: 0.4;
+}

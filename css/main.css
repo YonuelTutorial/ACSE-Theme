@@ -1,0 +1,198 @@
+/* ===============================
+   VARIABLES GLOBALES DEL TEMA
+   =============================== */
+:root {
+    /* Colores base */
+    --color-bg: #f7f8fa;
+    --color-bg-card: #ffffff;
+    --color-text: #222;
+    --color-muted: #777;
+    --color-border: #e6e6e6;
+
+    /* Sidebar */
+    --sidebar-bg: #ffffff;
+    --sidebar-text: #333;
+    --sidebar-hover-bg: #f0f0f0;
+    --sidebar-active-bg: #e9e9e9;
+
+    /* Sombra */
+    --shadow-light: 0 2px 6px rgba(0,0,0,0.06);
+    --shadow-card: 0 4px 12px rgba(0,0,0,0.08);
+
+    /* Estética */
+    --radius: 14px;
+    --transition: .25s ease;
+    --spacing: 18px;
+    --font-size: 15px;
+}
+
+/* ===============================
+   ESTILO GENERAL
+   =============================== */
+
+body {
+    background: var(--color-bg);
+    font-family: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: var(--font-size);
+    color: var(--color-text);
+    margin: 0;
+}
+
+/* Tarjetas modernas */
+.card {
+    background: var(--color-bg-card);
+    border: none !important;
+    border-radius: var(--radius);
+    padding: var(--spacing);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* Títulos limpios */
+h1, h2, h3, h4, h5 {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+p, span, small {
+    color: var(--color-muted);
+}
+
+/* Inputs modernos */
+input, select, textarea {
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+    padding: 10px 14px;
+    transition: var(--transition);
+    background: #fff;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--color-text);
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.05);
+}
+
+/* ===============================
+   SIDEBAR MODERNO
+   =============================== */
+
+.sidebar {
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--color-border);
+    box-shadow: var(--shadow-light);
+}
+
+.sidebar .nav-link {
+    color: var(--sidebar-text);
+    padding: 12px 18px;
+    border-radius: var(--radius);
+    margin-bottom: 6px;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.sidebar .nav-link:hover {
+    background: var(--sidebar-hover-bg);
+}
+
+.sidebar .nav-link.active {
+    background: var(--sidebar-active-bg);
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+/* ===============================
+   TABLAS MODERNAS
+   =============================== */
+
+table {
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #fff;
+    box-shadow: var(--shadow-light);
+}
+
+table thead {
+    background: #f3f3f3;
+    color: #333;
+    font-weight: 600;
+}
+
+table td, table th {
+    padding: 14px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+table tr:hover {
+    background: #f9f9f9;
+}
+
+/* ===============================
+   PAGINACIÓN
+   =============================== */
+
+.pagination .page-link {
+    border-radius: var(--radius);
+    border: none;
+    color: var(--color-text);
+}
+
+.pagination .page-item.active .page-link {
+    background: var(--color-text);
+    color: #fff;
+}
+
+/* ===============================
+   HEADER / TOPBAR
+   =============================== */
+
+.topbar {
+    background: #ffffff;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-light);
+}
+
+.topbar .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.topbar .right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Iconos */
+.icon {
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+}
+.icon:hover {
+    opacity: 1;
+}
+
+
+/* ===============================
+   ANIMACIONES LINDAS
+   =============================== */
+
+.fade-in {
+    animation: fadeIn .4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}

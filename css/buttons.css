@@ -1,0 +1,103 @@
+/* ===============================
+   VARIABLES GLOBALES PARA BOTONES
+   =============================== */
+:root {
+    --btn-radius: 12px;
+    --btn-font-weight: 600;
+
+    /* Colores globales (cámbialos cuando quieras) */
+    --btn-primary-bg: #ffffff;
+    --btn-primary-text: #1a1a1a;
+    --btn-primary-hover-bg: #f2f2f2;
+
+    --btn-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+    /* Velocidad */
+    --btn-transition: 0.25s ease;
+}
+
+/* ===============================
+   GENERALES
+   =============================== */
+
+.btn, 
+.btn:hover, 
+.btn:active {
+    border: none !important;
+    border-radius: var(--btn-radius) !important;
+    font-weight: var(--btn-font-weight);
+    transition: var(--btn-transition);
+    box-shadow: var(--btn-shadow);
+}
+
+/* Hover / Active */
+.btn:not(.disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.btn:not(.disabled):active {
+    transform: scale(0.98);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+}
+
+/* ===============================
+   BOTÓN PRINCIPAL
+   =============================== */
+
+.btn-primary {
+    background-color: var(--btn-primary-bg) !important;
+    color: var(--btn-primary-text) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+    background-color: var(--btn-primary-hover-bg) !important;
+}
+
+/* ===============================
+   COLORES SECUNDARIOS (OPCIONAL)
+   =============================== */
+
+.btn-secondary    { background: #f0f0f0; color: #333; }
+.btn-success      { background: #28a745; color: #fff; }
+.btn-info         { background: #17a2b8; color: #fff; }
+.btn-danger       { background: #dc3545; color: #fff; }
+.btn-warning      { background: #ffc107; color: #333; }
+.btn-light        { background: #f8f9fa; color: #333; }
+.btn-dark         { background: #343a40; color: #fff; }
+
+/* ===============================
+   SIDEBAR
+   =============================== */
+.sidebar .nav-pills .nav-link {
+    border-radius: var(--btn-radius);
+}
+
+/* ===============================
+   NOTES
+   =============================== */
+.note-toolbar .note-btn {
+    border-radius: var(--btn-radius);
+}
+
+/* ===============================
+   BADGES
+   =============================== */
+span.badge.badge-primary {
+    border-radius: var(--btn-radius);
+}
+
+/* ===============================
+   PAGINACIÓN
+   =============================== */
+
+.page-item:first-child .page-link {
+    border-top-left-radius: var(--btn-radius);
+    border-bottom-left-radius: var(--btn-radius);
+}
+
+.page-item:last-child .page-link {
+    border-top-right-radius: var(--btn-radius);
+    border-bottom-right-radius: var(--btn-radius);
+}
