@@ -1,23 +1,16 @@
 @import url("https://yonueltutorial.github.io/ACSE-Theme/css/main.css");
 @import url("https://yonueltutorial.github.io/ACSE-Theme/css/buttons.css");
 
-/* Variables globales del tema */
 :root {
-
-    --base-color: rgb(var(--primary-color));
-    --base-overlay: rgba(var(--overlay-color), var(--overlay-opacity));
-    --base-blur: var(--blur);
-    --base-border: var(--border-thickness) solid rgba(var(--overlay-color), var(--overlay-opacity));
-    --border-color: rgba(var(--overlay-color), var(--overlay-opacity));
-    --border-radius: 12px;
-    --text-color: #eeeeee;
-
-        --btn-bg: #ffffff;              /* Color de fondo de todos los botones */
-    --btn-text: #000000;            /* Color del texto */
-    --btn-border: #e0e0e0;          /* Color del borde */
-    --btn-radius: 14px;             /* Curvatura de los botones */
-    --btn-hover-bg: #f0f0f0;        /* Fondo al pasar el mouse */
-    --btn-active-bg: #e5e5e5;       /* Fondo al hacer click */
-    --animation-speed: 0.15s;       /* Animación suave */
-    --primary-color: #7a42ff;       /* Color principal si usas .btn-primary */
+    --primary-color: 163, 104, 230;
+    --overlay-color: 255, 255, 255;
+    --overlay-opacity: 0.12;
+    --blur: 1.6em;
+    --border-thickness: 1px;
+    --icon-color: 163, 104, 230;
+    --dropdown-bg-opacity: 0.18;
+    --animation-speed: 0.2s;
+    --bg-img: url("https://yonueltutorial.github.io/ACSE-Theme/css/default-bg.jpg");
+    --bg-blur: 10px;
+    --bg-brightness: 0.55;
 }

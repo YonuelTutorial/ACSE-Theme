@@ -1,18 +1,12 @@
-/* ------------- VARIABLES GLOBALES DE COLORES ------------- */
-/* Puedes poner esto en el main.css pa' que todo use el mismo color */
 :root {
-    --btn-bg: #ffffff;              /* Color de fondo de todos los botones */
-    --btn-text: #000000;            /* Color del texto */
-    --btn-border: #e0e0e0;          /* Color del borde */
-    --btn-radius: 14px;             /* Curvatura de los botones */
-    --btn-hover-bg: #f0f0f0;        /* Fondo al pasar el mouse */
-    --btn-active-bg: #e5e5e5;       /* Fondo al hacer click */
-    --animation-speed: 0.15s;       /* Animación suave */
-    --primary-color: #7a42ff;       /* Color principal si usas .btn-primary */
+    --btn-bg: #ffffff;
+    --btn-text: #111;
+    --btn-border: rgba(0,0,0,0.15);
+    --btn-hover-bg: #f3f3f3;
+    --btn-active-bg: #e7e7e7;
+    --btn-radius: 14px;
 }
 
-
-/* ------------- ESTILO BASE DE LOS BOTONES ------------- */
 .btn {
     background: var(--btn-bg) !important;
     color: var(--btn-text) !important;
@@ -20,28 +14,20 @@
     border-radius: var(--btn-radius);
     padding: 8px 20px;
     font-weight: 500;
-    transition: all var(--animation-speed) ease;
-    box-shadow: none !important;
+    transition: all var(--animation-speed);
 }
 
-/* Hover */
-.btn:not(.disabled):hover {
+.btn:hover:not(.disabled) {
     background: var(--btn-hover-bg) !important;
-    border-color: var(--btn-border) !important;
 }
 
-/* Active */
-.btn:not(.disabled):active {
+.btn:active:not(.disabled) {
     background: var(--btn-active-bg) !important;
-    border-color: var(--btn-border) !important;
     transform: scale(0.97);
 }
 
-
-/* ------------- BOTÓN PRIMARIO ------------- */
-
 .btn-primary {
-    background: var(--primary-color) !important;
+    background: rgb(var(--primary-color)) !important;
     border: none !important;
     color: white !important;
 }
@@ -55,28 +41,24 @@
     transform: scale(0.97);
 }
 
-
-/* ------------- OTROS BOTONES (VERSION MINIMALISTA) ------------- */
-
-.btn-secondary,
-.btn-success,
-.btn-info,
-.btn-danger,
-.btn-warning,
-.btn-light,
-.btn-dark {
-    background: var(--btn-bg) !important;
-    color: var(--btn-text) !important;
-    border: 1px solid var(--btn-border) !important;
+.sidebar .nav-pills .nav-link {
+    border-radius: var(--btn-radius);
 }
 
+.note-toolbar .note-btn {
+    border-radius: var(--btn-radius);
+}
 
-/* ------------- sidebar y otros elementos redondeados ------------- */
+span.badge.badge-primary {
+    border-radius: var(--btn-radius);
+}
 
-.sidebar .nav-pills .nav-link,
-.note-toolbar .note-btn,
-span.badge.badge-primary,
-.page-item:first-child .page-link,
+.page-item:first-child .page-link {
+    border-top-left-radius: var(--btn-radius);
+    border-bottom-left-radius: var(--btn-radius);
+}
+
 .page-item:last-child .page-link {
-    border-radius: var(--btn-radius) !important;
+    border-top-right-radius: var(--btn-radius);
+    border-bottom-right-radius: var(--btn-radius);
 }
