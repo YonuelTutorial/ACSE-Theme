@@ -1,18 +1,23 @@
-@import url("/main/main.css");
-@import url("/main/fg-buttons.css");
+@import url("https://yonueltutorial.github.io/ACSE-Theme/css/main.css");
+@import url("https://yonueltutorial.github.io/ACSE-Theme/css/buttons.css");
 
 /* Variables globales del tema */
 :root {
-    --primary-color: 163,104,230;
-    --overlay-color: 255, 255, 255;
-    --overlay-opacity: 0.1;
-    --blur: 2em;
-    --border-thickness: 1px;
-    --icon-color: 173,127,218;
-    --dropdown-bg-opacity: 0.2;
 
-    /* Background */
-    --bg-img: url("/main/default-bg.jpg");
-    --bg-blur: 8px;
-    --bg-brightness: 0.4;
+    --base-color: rgb(var(--primary-color));
+    --base-overlay: rgba(var(--overlay-color), var(--overlay-opacity));
+    --base-blur: var(--blur);
+    --base-border: var(--border-thickness) solid rgba(var(--overlay-color), var(--overlay-opacity));
+    --border-color: rgba(var(--overlay-color), var(--overlay-opacity));
+    --border-radius: 12px;
+    --text-color: #eeeeee;
+
+        --btn-bg: #ffffff;              /* Color de fondo de todos los botones */
+    --btn-text: #000000;            /* Color del texto */
+    --btn-border: #e0e0e0;          /* Color del borde */
+    --btn-radius: 14px;             /* Curvatura de los botones */
+    --btn-hover-bg: #f0f0f0;        /* Fondo al pasar el mouse */
+    --btn-active-bg: #e5e5e5;       /* Fondo al hacer click */
+    --animation-speed: 0.15s;       /* Animación suave */
+    --primary-color: #7a42ff;       /* Color principal si usas .btn-primary */
 }

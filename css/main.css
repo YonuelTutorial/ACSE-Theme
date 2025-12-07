@@ -1,198 +1,194 @@
-/* ===============================
-   VARIABLES GLOBALES DEL TEMA
-   =============================== */
+/* ===========================
+   MAIN THEME (Glass + Minimal)
+   Compatible 100% con tus variables
+=========================== */
+
 :root {
-    /* Colores base */
-    --color-bg: #f7f8fa;
-    --color-bg-card: #ffffff;
-    --color-text: #222;
-    --color-muted: #777;
-    --color-border: #e6e6e6;
-
-    /* Sidebar */
-    --sidebar-bg: #ffffff;
-    --sidebar-text: #333;
-    --sidebar-hover-bg: #f0f0f0;
-    --sidebar-active-bg: #e9e9e9;
-
-    /* Sombra */
-    --shadow-light: 0 2px 6px rgba(0,0,0,0.06);
-    --shadow-card: 0 4px 12px rgba(0,0,0,0.08);
-
-    /* Estética */
-    --radius: 14px;
-    --transition: .25s ease;
-    --spacing: 18px;
-    --font-size: 15px;
+    --base-color: rgb(var(--primary-color));
+    --base-overlay: rgba(var(--overlay-color), var(--overlay-opacity));
+    --base-blur: var(--blur);
+    --base-border: var(--border-thickness) solid rgba(var(--overlay-color), var(--overlay-opacity));
+    --border-color: rgba(var(--overlay-color), var(--overlay-opacity));
+    --border-radius: 12px;
+    --text-color: #eeeeee;
 }
 
-/* ===============================
-   ESTILO GENERAL
-   =============================== */
-
+/* Background */
 body {
-    background: var(--color-bg);
-    font-family: "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
-    font-size: var(--font-size);
-    color: var(--color-text);
     margin: 0;
+    padding: 0;
+    color: var(--text-color);
 }
 
-/* Tarjetas modernas */
-.card {
-    background: var(--color-bg-card);
-    border: none !important;
-    border-radius: var(--radius);
-    padding: var(--spacing);
-    box-shadow: var(--shadow-card);
-    transition: var(--transition);
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: var(--bg-img);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: blur(var(--bg-blur)) brightness(var(--bg-brightness));
+    z-index: -1;
 }
 
-.card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+/* Typography */
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-weight: bold;
 }
 
-/* Títulos limpios */
-h1, h2, h3, h4, h5 {
-    font-weight: 600;
-    color: var(--color-text);
+/* Navbar */
+.navbar.bg-primary {
+    background-color: var(--base-overlay) !important;
+    backdrop-filter: blur(var(--base-blur)) !important;
+    border-bottom: var(--base-border) !important;
 }
 
-p, span, small {
-    color: var(--color-muted);
+/* Main Container */
+body > .container {
+    margin: 128px auto 64px;
+    padding: 1.25rem;
+    background-color: var(--base-overlay);
+    border-radius: var(--border-radius);
+    border: var(--base-border);
+    backdrop-filter: blur(var(--base-blur));
+    position: relative;
 }
 
-/* Inputs modernos */
-input, select, textarea {
-    border-radius: var(--radius);
-    border: 1px solid var(--color-border);
-    padding: 10px 14px;
-    transition: var(--transition);
-    background: #fff;
+/* Fullscreen container (dashboard) */
+body > .container-fluid {
+    min-height: 100vh;
+    margin: 0 !important;
+    padding-top: 128px !important;
+    background-color: var(--base-overlay);
+    backdrop-filter: blur(var(--base-blur));
 }
 
-input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: var(--color-text);
-    box-shadow: 0 0 0 3px rgba(0,0,0,0.05);
-}
-
-/* ===============================
-   SIDEBAR MODERNO
-   =============================== */
-
+/* Sidebar */
 .sidebar {
-    background: var(--sidebar-bg);
-    border-right: 1px solid var(--color-border);
-    box-shadow: var(--shadow-light);
+    background-color: var(--base-overlay);
+    border: none !important;
+    backdrop-filter: blur(var(--base-blur));
 }
 
 .sidebar .nav-link {
-    color: var(--sidebar-text);
-    padding: 12px 18px;
-    border-radius: var(--radius);
-    margin-bottom: 6px;
-    transition: var(--transition);
-    font-weight: 500;
-}
-
-.sidebar .nav-link:hover {
-    background: var(--sidebar-hover-bg);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    transition: all 0.2s ease;
 }
 
 .sidebar .nav-link.active {
-    background: var(--sidebar-active-bg);
-    color: var(--color-text);
-    font-weight: 600;
+    background-color: var(--base-color) !important;
+    color: #fff !important;
 }
 
-/* ===============================
-   TABLAS MODERNAS
-   =============================== */
-
-table {
-    border-radius: var(--radius);
-    overflow: hidden;
-    background: #fff;
-    box-shadow: var(--shadow-light);
+.sidebar .nav-link:hover {
+    background-color: rgba(var(--overlay-color), 0.2);
 }
 
-table thead {
-    background: #f3f3f3;
-    color: #333;
-    font-weight: 600;
+/* Cards */
+.card {
+    background-color: var(--base-overlay) !important;
+    border: var(--base-border);
+    border-radius: var(--border-radius) !important;
+    backdrop-filter: blur(var(--base-blur));
 }
 
-table td, table th {
-    padding: 14px;
-    border-bottom: 1px solid #eaeaea;
+.card-header, .card-footer {
+    background-color: transparent !important;
+    border-color: var(--border-color) !important;
 }
 
-table tr:hover {
-    background: #f9f9f9;
+/* Images */
+.card img {
+    border-radius: var(--border-radius);
+    border: var(--base-border);
 }
 
-/* ===============================
-   PAGINACIÓN
-   =============================== */
-
-.pagination .page-link {
-    border-radius: var(--radius);
-    border: none;
-    color: var(--color-text);
+/* Tables */
+.table {
+    color: var(--text-color);
+    background-color: var(--base-overlay) !important;
+    border: var(--base-border);
 }
 
-.pagination .page-item.active .page-link {
-    background: var(--color-text);
-    color: #fff;
+.table th,
+.table td {
+    border: var(--base-border);
+    background-color: transparent !important;
 }
 
-/* ===============================
-   HEADER / TOPBAR
-   =============================== */
-
-.topbar {
-    background: #ffffff;
-    padding: 14px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--color-border);
-    box-shadow: var(--shadow-light);
+.table-striped tbody tr:nth-child(odd) {
+    background-color: rgba(var(--overlay-color), 0.05) !important;
 }
 
-.topbar .title {
-    font-size: 20px;
-    font-weight: 600;
+/* Inputs */
+.form-control,
+.select2-selection,
+.select2-dropdown {
+    background-color: var(--base-overlay) !important;
+    border: var(--base-border);
+    border-radius: var(--border-radius) !important;
+    backdrop-filter: blur(var(--base-blur));
+    color: var(--text-color) !important;
 }
 
-.topbar .right {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+.form-control:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--base-color);
 }
 
-/* Iconos */
-.icon {
-    width: 20px;
-    height: 20px;
-    opacity: 0.7;
-}
-.icon:hover {
-    opacity: 1;
+/* Dropdown */
+.dropdown-menu {
+    background-color: rgba(var(--overlay-color), var(--dropdown-bg-opacity)) !important;
+    border: var(--base-border);
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(var(--base-blur));
 }
 
-
-/* ===============================
-   ANIMACIONES LINDAS
-   =============================== */
-
-.fade-in {
-    animation: fadeIn .4s ease;
+.dropdown-item {
+    color: var(--text-color);
+    transition: all 0.2s ease;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(4px); }
-    to { opacity: 1; transform: translateY(0); }
+.dropdown-item:hover {
+    background-color: rgba(var(--overlay-color), 0.15);
+}
+
+/* Badges */
+.badge-primary {
+    background-color: var(--base-color) !important;
+    border-radius: var(--border-radius);
+}
+
+/* Code blocks */
+pre, code {
+    background-color: var(--base-overlay);
+    border: var(--base-border);
+    border-radius: var(--border-radius);
+}
+
+/* Scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--overlay-color), 0.2) transparent;
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: rgba(var(--overlay-color), 0.2);
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Animations */
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
